@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+    <head></head>
+    <body>
+        <!-- Desktop Create Folder-->
+        <article th:fragment="create-folder-article(newFolder)" class="request-article create-folder-article" id="create-folder-article" style="display: none;">
+            <div class="request-article-background create-folder-background-div" onclick="createFolderButtonPressed()"></div>
+            <form class="request-form create-folder-article-form" th:object="${newFolder}" modelAttribute="newFolder" id="create-folder-article-form">
+                <h1 class="request-form-h1 create-folder-article-form-h1" th:text="#{lang.element.add-new-folder}"></h1>
+                <p class="request-form-p create-folder-article-form-error-message-p" id="create-folder-article-form-bad-request-message" style="display:none;"></p>
+                <label hidden="hidden">
+                    <input type="text" id="folderId" name="folderId" th:field="*{folderId}" th:value="${newFolder.folderId}" hidden="hidden"/>
+                </label>
+                <div class="request-form-checkbox-div create-folder-article-form-checkbox-div">
+                    <label class="request-form-label create-folder-article-form-checkbox-label" for="folderPrivate" th:text="#{lang.element.folder-is-private}"></label>
+                    <input class="request-form-input create-folder-article-form-checkbox-input" name="folderPrivate" id="folderPrivate" type="checkbox" th:field="*{folderPrivate}">
+                </div>
+                <div class="request-form-checkbox-div create-folder-article-form-checkbox-div">
+                    <label class="request-form-label create-folder-article-form-checkbox-label" for="folderHavePassword" th:text="#{lang.element.have-password}"></label>
+                    <input class="request-form-input create-folder-article-form-checkbox-input" name="folderHavePassword" onclick="dcfHavePasswordCheckBoxPressed()" id="folderHavePassword" type="checkbox" th:field="*{folderHavePassword}">
+                </div>
+                <div class="request-form-div create-folder-article-form-folder-name-div">
+                    <label class="request-form-label create-folder-article-form-label" for="folderName" th:text="#{lang.element.folder-name}"></label>
+                    <input class="request-form-input create-folder-article-form-input" id="folderName" type="text" th:placeholder="#{lang.placeholder.create-folder.folder-name}" th:field="*{folderName}" th:value="${newFolder.folderName}" required>
+                </div>
+                <div class="request-form-password-div create-folder-article-form-password-div" id="create-folder-article-form-password-div">
+                    <label class="request-form-label create-folder-article-form-label" for="folderPassword" th:text="#{lang.element.folder-password}"></label>
+                    <input class="request-form-input create-folder-article-form-input" id="folderPassword" type="password" th:placeholder="#{lang.placeholder.create-folder.password}" th:field="*{password}" th:value="${newFolder.password}">
+                </div>
+                <div class="request-form-password-div create-folder-article-form-password-div" id="create-folder-article-form-match-password-div">
+                    <label class="request-form-label create-folder-article-form-label" for="folderMatchPassword" th:text="#{lang.element.folder-password-again}"></label>
+                    <input class="request-form-input create-folder-article-form-input" id="folderMatchPassword" type="password" th:placeholder="#{lang.placeholder.create-folder.password-again}" th:field="*{matchPassword}" th:value="${newFolder.matchPassword}">
+                </div>
+                <div class="request-form-button-div create-folder-article-form-button-panel-div">
+                    <a class="element-simple-button request-form-button create-folder-article-form-button" onclick="createFolderButtonPressed()" th:text="#{lang.button.cancel}"></a>
+                    <button class="element-simple-button request-form-button create-folder-article-form-button" type="submit" th:text="#{lang.button.create}"></button>
+                </div>
+            </form>
+            <div class="request-form create-folder-article-result" id="create-folder-article-result" style="display:none;">
+                <div class="request-form-div">
+                    <p class="request-message-p create-folder-article-p" id="create-folder-article-result-message"></p>
+                    <button class="element-simple-button request-form-button create-folder-article-result-button" onclick="createFolderContinueButtonPressed()" th:text="#{lang.button.continue}"></button>
+                </div>
+            </div>
+            <div class="request-form create-folder-article-error" id="create-folder-article-error" style="display:none;">
+                <div class="request-form-div">
+                    <p class="request-message-p create-folder-article-p" id="create-folder-article-error-message"></p>
+                    <button class="element-simple-button request-form-button create-folder-article-error-button" onclick="createFolderErrorButtonPressed()" th:text="#{lang.button.go-back}"></button>    
+                </div>
+            </div>
+            <script type="text/javascript" th:src="@{/js/CreateNewFolder.js}"></script>
+        </article>
+    </body>
+</html>

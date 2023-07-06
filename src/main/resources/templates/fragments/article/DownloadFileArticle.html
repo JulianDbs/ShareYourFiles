@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+  <head></head>
+  <body>
+    <!-- Download File Article-->
+    <article th:fragment="download-file-article(fileSize, fileRequest)" class="request-article download-file-article" id="download-file-article" style="display: none;">
+      <div class="request-article-background download-file-background-div" onclick="downloadFileButtonPressed()"></div>
+      <form class="request-form download-file-article-form" th:object="${fileRequest}" id="download-file-article-form">
+        <h1 class="request-form-h1 download-file-article-form-h1" th:text="#{lang.element.download-file}"></h1>
+        <p class="request-form-p download-file-article-form-error-message-p" id="download-file-article-form-error-message" style="display:none;"></p>
+        <p class="request-form-p download-file-article-form-p" th:text="${fileRequest.getFileName()}"></p>
+        <label hidden="hidden" style="display: none;">
+          <input type="text" th:field="*{fileId}" name="fileId" th:value="${fileRequest.getFileId()}" hidden="hidden" style="display: none;"/>
+          <input type="text" th:field="*{fileName}" name="fileId" th:value="${fileRequest.getFileName()}" hidden="hidden" style="display: none;"/>
+          <input type="text" th:field="*{filePassword}" name="fileId" th:value="${fileRequest.getFilePassword()}" hidden="hidden" style="display: none;"/>
+        </label>
+        <div class="request-form-button-div download-file-article-form-button-panel-div">
+          <a class="element-simple-button request-form-button download-file-article-form-button" onclick="downloadFileButtonPressed()" th:text="#{lang.button.cancel}"></a>
+          <button class="element-simple-button request-form-button download-file-article-form-button" type="submit" th:text="#{lang.button.download}"></button>
+        </div>
+      </form>
+      <div class="download-file-article-form-progress-bar-div" id="download-file-article-form-progress-bar-div">
+        <div class="download-file-article-form-step-a-div" id="download-file-article-form-step-a-div">
+          <p class="download-file-article-form-progress-bar-p" th:text="#{lang.element.requesting-file}"></p>
+        </div>
+        <div class="download-file-article-form-step-b-div" id="download-file-article-form-step-b-div">
+          <div class="download-file-article-form-progress-bar-p-div">
+            <p class="download-file-article-form-progress-bar-p" th:text="#{lang.element.downloading-size}"></p>
+            <p class="download-file-article-form-progress-bar-p" id="download-file-article-form-size-p" th:text="${' : 0 '}"></p>
+            <p class="download-file-article-form-progress-bar-p" th:text="${' / ' + fileSize}"></p>
+          </div>
+          <div class="download-file-article-form-progress-bar-p-div">
+            <p class="download-file-article-form-progress-bar-p" th:text="#{lang.element.downloading-time}"></p>
+            <p class="download-file-article-form-progress-bar-p" id="download-file-article-form-time-p" th:text="${' : 0 MS'}"></p>
+          </div>
+          <div class="download-file-article-form-progress-bar-p-div">
+            <p class="download-file-article-form-progress-bar-p" th:text="#{lang.element.downloading-progress-bar}"></p>
+            <p class="download-file-article-form-progress-bar-p" id="download-file-article-form-percent-p" th:text="${' : %0'}"></p>
+          </div>
+        </div>
+        <div class="download-file-article-form-progress-div">
+          <div class="download-file-article-form-progress" id="download-file-article-form-progress">
+            <span class="download-file-article-form-progress-span" id="download-file-article-form-progress-span"></span>
+          </div>
+        </div>
+        <button class="element-simple-button request-form-button download-file-article-button" onclick="closeDownloadFileWindow()" th:text="#{lang.button.continue}" id="download-file-article-button"></button>
+      </div>
+      <script type="text/javascript" th:src="@{/js/DownloadFile.js}"></script>
+    </article>
+  </body>
+</html>

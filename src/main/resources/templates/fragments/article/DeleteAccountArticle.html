@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+  <head></head>
+  <body>
+
+    <!-- Delete Account Article -->
+    <article th:fragment="delete-account-article(deleteAccountRequest)" class="request-article delete-account-article" id="delete-account-article" style="display: none;">
+      <div class="request-article-background delete-account-background-div" onclick="deleteAccountButtonPressed()"></div>
+      <form class="request-form delete-account-article-form" id="delete-account-article-form" th:action="@{/user/delete-account}" th:object="${deleteAccountRequest}">
+        <h1 class="request-form-h1 delete-account-article-form-h1" th:text="#{lang.element.delete-user-account}"></h1>
+        <div class="request-form-div delete-account-article-form-password-div">
+          <label class="request-form-label delete-account-article-form-label" for="password" th:text="#{lang.element.account-password}"></label>
+          <input class="request-form-input delete-account-article-form-input" id="password" type="password" th:placeholder="#{lang.placeholder.delete-account.account-password}" th:field="*{password}" th:value="${''}" required/>
+        </div>
+        <div class="request-form-div delete-account-article-form-password-div">
+          <label class="request-form-label delete-account-article-form-label" for="matchPassword" th:text="#{lang.element.account-password-again}"></label>
+          <input class="request-form-input delete-account-article-form-input" id="matchPassword" type="password" th:placeholder="#{lang.placeholder.delete-account.account-password-again}" th:field="*{matchPassword}" th:value="${''}" required/>
+        </div>
+        <div class="request-form-button-div delete-account-article-form-button-panel-div">
+          <a class="element-simple-button request-form-button delete-account-article-form-button" onclick="deleteAccountButtonPressed()" th:text="#{lang.button.cancel}"></a>
+          <button class="element-simple-button request-form-button delete-account-article-form-button" type="submit" th:text="#{lang.button.delete-user-account}"></button>
+        </div>
+      </form>
+      <div class="request-form delete-account-article-result" id="delete-account-article-result">
+        <p class="request-form-p delete-account-article-result-p" id = "delete-account-article-result-message"></p>
+        <button class="element-simple-button request-form-button delete-account-article-form-button" onclick="deleteAccountContinueButtonPressed()" th:text="#{lang.button.continue}"></button>
+      </div>
+      <div class="request-form delete-account-article-error" id="delete-account-article-error" style="display:none;">
+        <div class="request-form-div">
+          <p class="request-message-p delete-account-article-p" id="delete-account-article-error-message"></p>
+          <button class="element-simple-button request-form-button delete-account-article-error-button" onclick="deleteAccountErrorButtonPressed()" th:text="#{lang.button.go-back}"></button>
+        </div>
+      </div>
+      <script type="text/javascript" th:src="@{/js/DeleteAccount.js}"></script>
+    </article>
+  </body>
+</html>

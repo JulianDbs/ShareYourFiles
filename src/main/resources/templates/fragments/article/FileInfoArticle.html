@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+  <head></head>
+  <body>
+    <!-- File Info Article -->
+    <article class="file-info-article" th:fragment="file-info-article(fileInfo)">
+      <div class="file-info-article-div">
+        <div class="file-info-article-image-div">
+          <th:block th:with="type=${#strings.substringBefore(fileInfo.getFileContentType, '/')}" th:switch="${type}">
+            <img th:case="text" class="file-article-form-img" th:src="@{'/icons/file/file-icon.svg'}" alt="icon"/>
+            <img th:case="application" class="file-article-form-img" th:src="@{'/icons/file/application-file-icon.svg'}" alt="icon"/>
+            <img th:case="image" class="file-article-form-img" th:src="@{'/icons/file/img-file-icon.svg'}" alt="icon"/>
+            <img th:case="video" class="file-article-form-img" th:src="@{'/icons/file/video-document-file-icon.svg'}" alt="icon"/>
+            <img th:case="audio" class="file-article-form-img" th:src="@{'/icons/file/music-song-file-icon.svg'}" alt="icon"/>
+          </th:block>
+        </div>
+        <div class="file-info-article-info-a-div">
+          <p class="file-info-article-name-p" th:text="#{lang.element.file-name} + ' ' + ${fileInfo.fileName}"></p>
+          <p class="file-info-article-p" th:text="#{lang.element.file-size} + ' ' + ${fileInfo.fileSize}"></p>
+        </div>
+      </div>
+      <div class="file-info-article-info-b-div">
+        <p class="file-info-article-name-p" th:text="#{lang.element.file-original-name} + ' ' + ${fileInfo.fileOriginalName}"></p>
+        <p class="file-info-article-p" th:text="#{lang.element.file-content-type} + ' ' + ${fileInfo.fileContentType}"></p>
+        <p class="file-info-article-p" th:with="date=${fileInfo.fileUploadDate}, format=#{lang.date-and-time-format}" th:text="#{lang.element.file-upload-date} + ${' ' + #temporals.format(date, format)}"></p>
+        <p class="file-info-article-p" th:with="fip=${fileInfo.fileIsPrivate}" th:text="${fip}? #{lang.element.file-info-is-private} + ' ' + #{lang.action.yes} : #{lang.element.file-info-is-private} + ' ' + #{lang.action.no}"></p>
+        <p class="file-info-article-p" th:with="fhp=${fileInfo.fileHavePassword}" th:text="${fhp}? #{lang.element.file-info-have-password} + ' ' + #{lang.action.yes} : #{lang.element.file-info-have-password} + ' ' + #{lang.action.no}"></p>
+      </div>
+    </article>
+  </body>
+</html>

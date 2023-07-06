@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+  <head></head>
+  <body>
+    <!-- Change Account Username Article -->
+    <article th:fragment="change-account-username-article(changeUsernameRequest)" class="request-article change-account-username-article" id="change-account-username-article" style="display: none;">
+      <div class="request-article-background change-account-username-background-div" onclick="changeAccountUsernameButtonPressed()"></div>
+      <form class="request-form change-account-username-article-form" id="change-account-username-article-form" th:action="@{/folder/set-password}" method="POST" th:object="${changeUsernameRequest}">
+        <h1 class="request-form-h1 change-account-username-article-form-h1" th:text="#{lang.element.change-username}"></h1>
+        <div class="request-form-div change-account-username-article-form-div">
+          <label class="request-form-label change-account-username-article-form-label" for="folderName" th:text="#{lang.element.new-account-username}"></label>
+          <input class="request-form-input change-account-username-article-form-input" id="folderName" type="text" th:placeholder="#{lang.placeholder.change-username.new-username}" th:field="*{newUsername}" th:value="${changeUsernameRequest.getNewUsername()}" required/>
+        </div>
+        <div class="request-form-div change-account-username-article-form-password-div">
+          <label class="request-form-label change-account-username-article-form-label" for="password" th:text="#{lang.element.folder-password}"></label>
+          <input class="request-form-input change-account-username-article-form-input" id="password" type="password" th:placeholder="#{lang.placeholder.change-username.account-password}" th:field="*{password}" th:value="${changeUsernameRequest.getPassword()}" required/>
+        </div>
+        <div class="request-form-button-div change-account-username-article-form-button-panel-div">
+          <a class="element-simple-button request-form-button change-account-username-article-form-button" onclick="changeAccountUsernameButtonPressed()" th:text="#{lang.button.cancel}"></a>
+          <button class="element-simple-button request-form-button change-account-username-article-form-button" type="submit" th:text="#{lang.button.change-account-username}"></button>
+        </div>
+      </form>
+      <div class="request-form change-account-username-article-result" id="change-account-username-article-result">
+        <p class="request-form-p change-account-username-article-result-p" id = "change-account-username-article-result-message"></p>
+        <button class="element-simple-button request-form-button change-account-username-article-form-button" onclick="changeAccountUsernameContinueButtonPressed()" th:text="#{lang.button.continue}"></button>
+      </div>
+      <div class="request-form change-account-username-article-error" id="change-account-username-article-error" style="display:none;">
+        <div class="request-form-div">
+          <p class="request-message-p change-account-username-article-p" id="change-account-username-article-error-message"></p>
+          <button class="element-simple-button request-form-button change-account-username-article-error-button" onclick="changeAccountUsernameErrorButtonPressed()" th:text="#{lang.button.go-back}"></button>
+        </div>
+      </div>
+      <script type="text/javascript" th:src="@{/js/ChangeAccountUsername.js}"></script>
+    </article>
+  </body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+  <head></head>
+  <body>
+    <!-- Folder Article -->
+    <article class="folder-article" th:fragment="folder-public-article(folder, folderRequest)">
+      <form class="folder-article-form" th:action="@{/desktop/folder}" th:object="${folderRequest}" method="post">
+        <input type="text" name="folderId" th:value="${folder.getFolderId()}" hidden="hidden"/>
+        <input type="text" name="folderPassword" th:value="${''}" th:field="*{folderPassword}" hidden="hidden"/>
+        <th:block th:if="${folder.folderIsPrivate}">
+          <img class="folder-article-form-img" th:src="@{'/icons/folder/private-unlocked-folder-icon.svg'}"/>
+        </th:block>
+        <th:block th:unless="${folder.folderIsPrivate}">
+          <img class="folder-article-form-img" th:src="@{'/icons/folder/public-unlocked-folder-icon.svg'}"/>
+        </th:block>
+        <p class="folder-article-form-p" th:text="${folder.getFolderName()}"></p>
+        <button class="folder-article-form-input" type="submit" value="Open"></button>
+      </form>
+    </article>
+  </body>
+</html>

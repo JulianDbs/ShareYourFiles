@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+    <head></head>
+    <body>
+        <!-- Upload File-->
+        <article th:fragment="upload-file-article(newFile, folderRequest)" class="request-article upload-file-article" id="upload-file-article" style="display: none;">
+            <div class="request-article-background upload-file-background-div" onclick="uploadFileButtonPressed()"></div>
+            <form class="request-form upload-file-article-form" th:object="${newFile}" enctype="multipart/form-data" id="upload-file-article-form">
+                <h1 class="request-form-h1 upload-file-article-form-h1" th:text="#{lang.element.add-new-file}"></h1>
+                <div class="request-form-checkbox-div upload-file-article-form-checkbox-div">
+                    <label class="request-form-checkbox-label upload-file-article-form-checkbox-label" for="fileIsPrivate" th:text="#{lang.element.file-is-private}"></label>
+                    <input class="request-form-checkbox-input upload-file-article-form-checkbox-input" id="fileIsPrivate" type="checkbox" th:field="*{fileIsPrivate}"/>
+                </div>
+                <div class="request-form-checkbox-div upload-file-article-form-checkbox-div">
+                    <label class="request-form-checkbox-label upload-file-article-form-checkbox-label" for="havePassword" th:text="#{lang.element.have-password}"></label>
+                    <input class="request-form-checkbox-input upload-file-article-form-checkbox-input" onclick="dufHavePasswordCheckBoxPressed()" id="havePassword" type="checkbox" th:field="*{fileHavePassword}">
+                </div>
+                <div class="request-form-password-div upload-file-article-form-password-div" id="upload-file-article-form-password-div">
+                    <label class="request-form-label upload-file-article-form-label" for="password" th:text="#{lang.element.file-password}"></label>
+                    <input class="request-form-input upload-file-article-form-input" id="password" type="password" th:placeholder="#{lang.placeholder.upload-file.password}" th:field="*{password}" th:value="${newFile.password}">
+                </div>
+                <div class="request-form-password-div upload-file-article-form-password-div" id="upload-file-article-form-match-password-div">
+                    <label class="request-form-label upload-file-article-form-label" for="matchPassword" th:text="#{lang.element.file-password-again}"></label>
+                    <input class="request-form-input upload-file-article-form-input" id="matchPassword" type="password" th:placeholder="#{lang.placeholder.upload-file.password-again}" th:field="*{matchPassword}" th:value="${newFile.matchPassword}">
+                </div>
+                <div class="request-form-div upload-file-article-form-file-div">
+                    <label class="request-form-label upload-file-article-form-label" for="file" th:text="#{lang.element.file-to-upload}"></label>
+                    <input class="upload-file-article-form-file-button" id="file" type="file" th:field="*{file}" name="file"/>
+                </div>
+                <label hidden="hidden">
+                    <input type="text" id="folderId" name="folderId" th:field="*{folderId}" th:value="${newFile.folderId}" hidden="hidden"/>
+                    <input type="text" id="fromUrl" name="fromUrl" th:field="*{fromUrl}" th:value="${newFile.fromUrl}" hidden="hidden"/>
+                </label>
+                <div class="request-form-button-div upload-file-article-form-button-panel-div">
+                    <a class="element-simple-button request-form-button upload-file-article-form-button" onclick="uploadFileButtonPressed()" th:text="#{lang.button.cancel}"></a>
+                    <button class="element-simple-button request-form-button upload-file-article-form-button" type="submit" th:text="#{lang.button.upload}"></button>
+                </div>
+            </form>
+            <div class="request-form upload-file-article-form-progress-bar-div" id="upload-file-article-form-progress-bar" style="display: none">
+                <div class="request-form-div">
+                    <p class="request-form-progress-p upload-file-article-form-progress-bar-p" id="upload-file-article-progress-message" th:text="#{lang.element.uploading}"></p>
+                </div>
+                <div class="request-form-progress-div upload-file-article-form-progress-bar-p-div">
+                    <p class="request-form-progress-p upload-file-article-form-progress-bar-p" th:text="#{lang.element.uploading-size}"></p>
+                    <p class="request-form-progress-p upload-file-article-form-progress-bar-p" id="upload-file-article-form-size-p" th:text="${' : 0 '}"></p>
+                    <p class="request-form-progress-p upload-file-article-form-progress-bar-p" th:text="${''}"></p>
+                </div>
+                <div class="request-form-progress-div upload-file-article-form-progress-bar-p-div">
+                    <p class="request-form-progress-p upload-file-article-form-progress-bar-p" th:text="#{lang.element.uploading-time}"></p>
+                    <p class="request-form-progress-p upload-file-article-form-progress-bar-p" id="upload-file-article-form-time-p" th:text="${' : 0 MS'}"></p>
+                </div>
+                <div class="request-form-progress-div upload-file-article-form-progress-bar-p-div">
+                    <p class="request-form-progress-p upload-file-article-form-progress-bar-p" th:text="#{lang.element.uploading-progress-bar}"></p>
+                    <p class="request-form-progress-p upload-file-article-form-progress-bar-p" id="upload-file-article-form-progress-bar-p" th:text="${'%0'}"></p>
+                </div>
+                <div class="request-form-progress-bar-div upload-file-article-form-progress-div">
+                    <div class="request-form-progress-bar upload-file-article-form-progress" id="upload-file-article-form-progress">
+                        <span class="request-form-progress-bar-span upload-file-article-form-progress-span" id="upload-file-article-form-progress-span"></span>
+                    </div>
+                </div>
+                <button id="upload-file-article-continue-button" class="element-simple-button request-form-button upload-file-article-form-button" onclick="uploadFileProgressContinueButtonPressed()" th:text="#{lang.button.continue}"></button>
+            </div>
+            <div class="request-form upload-file-article-error" id="upload-file-article-error" style="display:none;">
+                <div class="request-form-div">
+                    <p class="request-form-p upload-file-article-p" id="upload-file-article-error-message"></p>
+                    <button class="element-simple-button request-form-button upload-file-article-error-button" onclick="uploadFileErrorButtonPressed()" th:text="#{lang.button.go-back}"></button>
+                </div>
+            </div>
+            <script type="text/javascript" th:src="@{/js/UploadNewFile.js}"></script>
+        </article>
+    </body>
+</html>
