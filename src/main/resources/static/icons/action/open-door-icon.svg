@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 123 108"
+   version="1.1"
+   sodipodi:docname="open-door-icon.svg"
+   width="123"
+   height="108"
+   inkscape:version="1.2.2 (1:1.2.2+202212051552+b0a8486541)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview606"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="true"
+     inkscape:zoom="4.76"
+     inkscape:cx="48.529412"
+     inkscape:cy="57.352941"
+     inkscape:window-width="960"
+     inkscape:window-height="953"
+     inkscape:window-x="20"
+     inkscape:window-y="20"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid727" />
+  </sodipodi:namedview>
+  <defs
+     id="defs599">
+    <style
+       id="style597">.cls-1{fill-rule:evenodd;}</style>
+  </defs>
+  <title
+     id="title601">open-door</title>
+  <path
+     class="cls-1"
+     d="m 70.96284,20.611719 -30.557653,4.579893 a 1.9574487,1.9574487 0 0 0 -1.555233,1.855554 v 53.886152 c 0,0.874148 0.691811,1.206646 1.555233,1.329992 l 30.568378,4.23667 c 0.858059,0.117984 1.549871,-0.997494 1.549871,-1.882368 V 21.952437 A 1.3031782,1.3031782 0 0 0 70.96284,20.611719 Z m 4.826586,61.909009 a 1.3031782,1.3031782 0 1 1 0,-2.606356 h 4.086509 a 0.26814367,0.26814367 0 0 0 0.176974,-0.07508 0.25205504,0.25205504 0 0 0 0.06972,-0.176974 v -52.31483 a 0.26278079,0.26278079 0 0 0 -0.06972,-0.176975 0.27350654,0.27350654 0 0 0 -0.176974,-0.06972 h -4.065058 a 1.3085411,1.3085411 0 1 1 0,-2.611719 h 4.065058 a 2.8745001,2.8745001 0 0 1 2.858411,2.858412 v 52.330917 a 2.8637743,2.8637743 0 0 1 -2.858411,2.858412 z M 68.522732,49.517606 65.970004,48.788255 v 9.545915 l 2.552728,-0.922415 z"
+     id="path603"
+     style="stroke-width:0.536287" />
+  <metadata
+     id="metadata725">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>open-door</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

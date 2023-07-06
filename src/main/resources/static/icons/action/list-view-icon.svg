@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 123 108"
+   version="1.1"
+   sodipodi:docname="list-view-icon.svg"
+   width="123"
+   height="108"
+   inkscape:version="1.2.2 (1:1.2.2+202212051552+b0a8486541)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview192"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="true"
+     inkscape:zoom="4.76"
+     inkscape:cx="57.983193"
+     inkscape:cy="50.420168"
+     inkscape:window-width="960"
+     inkscape:window-height="953"
+     inkscape:window-x="20"
+     inkscape:window-y="20"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid419"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs185">
+    <style
+       id="style183">.cls-1{fill-rule:evenodd;}</style>
+  </defs>
+  <title
+     id="title187">list-view</title>
+  <path
+     class="cls-1"
+     d="m 48.469732,27.628498 h 45.701806 a 0.82900954,0.82900954 0 0 1 0.823695,0.823695 v 9.91623 a 0.83963785,0.83963785 0 0 1 -0.823695,0.818381 H 48.469732 a 0.82900954,0.82900954 0 0 1 -0.818381,-0.818381 v -9.91623 a 0.81838124,0.81838124 0 0 1 0.818381,-0.823695 z m 0,42.858731 h 45.701806 a 0.82900954,0.82900954 0 0 1 0.823695,0.818381 v 9.921544 a 0.83963785,0.83963785 0 0 1 -0.823695,0.818381 H 48.469732 A 0.82900954,0.82900954 0 0 1 47.651351,81.227154 V 71.30561 a 0.81838124,0.81838124 0 0 1 0.818381,-0.818381 z m -17.972502,0 h 8.502662 a 0.82900954,0.82900954 0 0 1 0.823695,0.818381 v 9.921544 a 0.83963785,0.83963785 0 0 1 -0.823695,0.818381 H 30.49723 A 0.82900954,0.82900954 0 0 1 29.673534,81.227154 V 71.30561 a 0.81838124,0.81838124 0 0 1 0.823696,-0.818381 z m 17.972502,-9.868402 h 45.701806 a 0.82900954,0.82900954 0 0 0 0.823695,-0.823696 V 49.878902 A 0.83963785,0.83963785 0 0 0 94.171538,49.055206 H 48.469732 a 0.8343237,0.8343237 0 0 0 -0.818381,0.823696 v 9.916229 a 0.82369539,0.82369539 0 0 0 0.818381,0.823696 z m -17.972502,0 h 8.502662 a 0.82900954,0.82900954 0 0 0 0.823695,-0.823696 V 49.878902 A 0.83963785,0.83963785 0 0 0 38.999892,49.055206 H 30.49723 a 0.8343237,0.8343237 0 0 0 -0.823696,0.823696 v 9.916229 a 0.82369539,0.82369539 0 0 0 0.823696,0.823696 z m 0,-32.990329 h 8.502662 a 0.82900954,0.82900954 0 0 1 0.823695,0.823695 v 9.91623 a 0.83963785,0.83963785 0 0 1 -0.823695,0.818381 H 30.49723 a 0.82900954,0.82900954 0 0 1 -0.823696,-0.818381 v -9.91623 a 0.81838124,0.81838124 0 0 1 0.823696,-0.823695 z"
+     id="path189"
+     style="stroke-width:0.531417" />
+  <metadata
+     id="metadata421">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>list-view</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+</svg>

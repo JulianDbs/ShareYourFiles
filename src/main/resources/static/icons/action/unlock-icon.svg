@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   id="Layer_1"
+   data-name="Layer 1"
+   viewBox="0 0 123 108"
+   version="1.1"
+   sodipodi:docname="unlock-icon.svg"
+   width="123"
+   height="108"
+   inkscape:version="1.2.2 (1:1.2.2+202212051552+b0a8486541)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     id="namedview431"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="true"
+     inkscape:zoom="4.76"
+     inkscape:cx="52.310924"
+     inkscape:cy="46.848739"
+     inkscape:window-width="960"
+     inkscape:window-height="953"
+     inkscape:window-x="20"
+     inkscape:window-y="20"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="Layer_1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid550"
+       originx="0"
+       originy="0" />
+  </sodipodi:namedview>
+  <defs
+     id="defs424">
+    <style
+       id="style422">.cls-1{fill-rule:evenodd;}</style>
+  </defs>
+  <title
+     id="title426">unlock</title>
+  <metadata
+     id="metadata552">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:title>unlock</dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <path
+     class="cls-1"
+     d="m 35.480317,47.996591 h 4.949162 V 37.614348 a 20.346558,20.346558 0 0 1 5.993985,-14.413061 v 0 a 20.346558,20.346558 0 0 1 28.826122,0 v 0 a 20.346558,20.346558 0 0 1 5.993985,14.413061 v 0.483918 h -7.946154 v -0.599398 a 12.47189,12.47189 0 0 0 -3.662381,-8.798512 v 0 A 12.477388,12.477388 0 0 0 48.34264,37.498868 v 10.497723 h 36.843763 a 1.5947302,1.5947302 0 0 1 1.589231,1.589231 v 33.604813 a 1.5947302,1.5947302 0 0 1 -1.589231,1.58923 H 35.480317 a 1.5947302,1.5947302 0 0 1 -1.589232,-1.58923 V 49.607818 a 1.5947302,1.5947302 0 0 1 1.589232,-1.611227 z m 25.438695,18.394387 2.518573,11.625034 h -6.906831 l 2.029157,-11.779008 a 4.6797081,4.6797081 0 1 1 2.359101,0.126479 z"
+     id="path428-3"
+     style="fill:#000000;fill-rule:evenodd;stroke-width:0.999991" />
+</svg>
