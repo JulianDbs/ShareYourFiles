@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+  <head></head>
+  <body>
+    <!-- Profile Panel Section -->
+    <section th:fragment="account-panel-section" class="panel-section">
+
+      <div class="element-compound-button panel-form">
+        <img class="panel-a-img" th:alt="#{lang.element.icon}" th:src="@{'/icons/action/group-icon.svg'}"/>
+        <p class="panel-a-p" th:text="#{lang.element.public}"></p>
+        <button class="panel-form-button" onclick="window.location.replace('/public')"></button>
+      </div>
+
+      <div class="element-compound-button panel-form">
+        <img class="panel-a-img" th:alt="#{lang.element.icon}" th:src="@{'/icons/action/homepage-icon.svg'}"/>
+        <p class="panel-a-p" th:text="#{lang.element.desktop}"></p>
+        <button class="panel-form-button" onclick="window.location.replace('/desktop')"></button>
+      </div>
+
+      <button class="element-compound-button panel-button" id="account-refresh-button" onclick="window.location = '/account'">
+        <img class="panel-a-img" th:alt="#{lang.element.icon}" th:src="@{'/icons/action/refresh-icon.svg'}"/>
+        <p class="panel-a-p" th:text="#{lang.element.refresh}"></p>
+      </button>
+
+      <button class="element-compound-button panel-button" onclick="changeAccountUsernameButtonPressed()">
+        <img class="panel-a-img" th:alt="#{lang.element.icon}" th:src="@{'/icons/action/rename-account.svg'}"/>
+        <p class="panel-a-p" th:text="#{lang.element.change-account-name}"></p>
+      </button>
+
+      <button class="element-compound-button panel-button" onclick="changeAccountPasswordButtonPressed()">
+        <img class="panel-a-img" th:alt="#{lang.element.icon}" th:src="@{'/icons/action/change-account-password.svg'}"/>
+        <p class="panel-a-p" th:text="#{lang.element.change-account-password}"></p>
+      </button>
+
+      <button class="element-compound-button panel-button" onclick="deleteAccountButtonPressed()">
+        <img class="panel-a-img" th:alt="#{lang.element.icon}" th:src="@{'/icons/action/delete-icon.svg'}"/>
+        <p class="panel-a-p" th:text="#{lang.element.delete-account}"></p>
+      </button>
+
+      <form class="element-compound-button panel-form panel-end-form" th:action="@{/logout}" method="post">
+        <img class="panel-a-img" th:alt="#{lang.element.icon}" th:src="@{'/icons/action/open-door-icon.svg'}"/>
+        <p class="panel-a-p" th:text="#{lang.element.logout}"></p>
+        <button class=" panel-form-button" type="submit"></button>
+      </form>
+
+    </section>
+  </body>
+</html>

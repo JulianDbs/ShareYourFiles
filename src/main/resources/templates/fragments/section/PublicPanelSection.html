@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+  <head></head>
+  <body>
+    <!-- Public Panel Section-->
+    <section th:fragment="public-panel-section" class="panel-section">
+
+      <div class="element-compound-button panel-form">
+        <img class="panel-a-img" th:alt="#{lang.element.icon}" th:src="@{'/icons/action/user-data-icon.svg'}"/>
+        <p class="panel-a-p" th:text="#{lang.element.account}"></p>
+        <button class="panel-form-button" onclick="window.location.replace('/account')"></button>
+      </div>
+
+      <div class="element-compound-button panel-form">
+        <img class="panel-a-img" th:alt="#{lang.element.icon}" th:src="@{'/icons/action/homepage-icon.svg'}"/>
+        <p class="panel-a-p" th:text="#{lang.element.desktop}"></p>
+        <button class="panel-form-button" onclick="window.location.replace('/desktop')"></button>
+      </div>
+
+      <button class="element-compound-button panel-button" onclick="viewButtonPressed()">
+        <img class="panel-a-img" th:alt="#{lang.element.icon}" th:src="@{'/icons/action/list-view-icon.svg'}" id="list-view-img"/>
+        <img class="panel-a-img hidde-view" th:alt="#{lang.element.icon}" th:src="@{'/icons/action/gallery-grid-view-icon.svg'}" id="grid-view-img"/>
+        <p class="panel-a-p" th:text="#{lang.element.change-view-mode}"></p>
+      </button>
+
+      <form class="element-compound-button panel-form panel-end-form" th:action="@{/logout}" method="post">
+        <img class="panel-a-img" th:alt="#{lang.element.icon}" th:src="@{'/icons/action/open-door-icon.svg'}"/>
+        <p class="panel-a-p" th:text="#{lang.element.logout}"></p>
+        <button class="panel-form-button" type="submit"></button>
+      </form>
+    </section>
+  </body>
+</html>

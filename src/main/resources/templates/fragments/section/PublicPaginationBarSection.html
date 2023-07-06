@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+  <head>
+      <meta charset="UTF-8">
+      <title>Title</title>
+  </head>
+  <body>
+    <main>
+      <section th:fragment="public-pagination-bar-section(offsetList, currentOffset, leftOffset, rightOffset)" class="public-pagination-bar-section">
+        <div class="public-pagination-bar-section-div">
+          <th:block th:if="${currentOffset == 1}">
+            <button class="public-pagination-bar-section-button pagination-button-left" style="border-color:grey;"></button>
+          </th:block>
+          <th:block th:unless="${currentOffset == 1}">
+            <button class="public-pagination-bar-section-button pagination-button-left" th:data-left-offset="${leftOffset}" th:onclick="offsetButtonPressed(this.getAttribute('data-left-offset'))"></button>
+          </th:block>
+          <div class="public-pagination-bar-section-list">
+            <th:block th:each="offset : ${offsetList}">
+              <th:block th:if="${offset == currentOffset}">
+                <button class="public-pagination-bar-section-item-button" th:text="${offset}" style="color:grey;"></button>
+              </th:block>
+              <th:block th:unless="${offset == currentOffset}">
+                <button class="public-pagination-bar-section-item-button" th:text="${offset}" th:data-offset="${offset}" th:onclick="offsetButtonPressed(this.getAttribute('data-offset'))"></button>
+              </th:block>
+            </th:block>
+          </div>
+          <th:block th:if="${rightOffset == currentOffset }">
+            <button class="public-pagination-bar-section-button pagination-button-right" style="border-color:grey;"></button>
+          </th:block>
+          <th:block th:unless="${rightOffset == currentOffset }">
+            <button class="public-pagination-bar-section-button pagination-button-right" th:data-right-offset="${rightOffset}" th:onclick="offsetButtonPressed(this.getAttribute('data-right-offset'))"></button>
+          </th:block>
+        </div>
+        <form th:action="@{/public}" method="POST" hidden="hidden" id="offset-form">
+          <input type="number" id="offset" name="offset" hidden="hidden" >
+          <button type="submit" hidden="hidden"></button>
+        </form>
+        <script type="text/javascript" th:src="@{/js/PaginationBar.js}"></script>
+      </section>
+    </main>
+  </body>
+</html>
