@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/styles/style.css}" rel="stylesheet" type="text/css"/>
+        <link rel="icon" type="image/png" th:href="@{/icons/favicon.png}"/>
+        <title th:text="#{lang.view.title.login}"></title>
+    </head>
+    <body>
+        <main class="login-main">
+            <form class="login-form" th:action="@{/login}" method="post" id="login-form">
+                <h1 class="login-form-h1" th:text="#{lang.view.title.login}"></h1>
+                <div class="login-error-div" th:if="${param.error}">
+                    <p class="login-error-p" th:text="#{lang.error.errorWrongUserOrPassword}"></p>
+                </div>
+                <div class="login-form-div">
+                    <label class="login-form-label" for="email" th:text="#{lang.element.email}"></label>
+                    <input class="login-form-input" type="text" id="email" name="email" th:placeholder="#{lang.placeholder.login.email}" autofocus required/>
+                </div>
+                <div class="login-form-div">
+                    <label class="login-form-label" for="password" th:text="#{lang.element.password}"></label>
+                    <input class="login-form-input" type="password" id="password" name="password" th:placeholder="#{lang.placeholder.login.password}" required/>
+                </div>
+                <div class="login-form-buttons-div">
+                    <a class="element-simple-button login-form-a" th:href="@{/}" th:text="#{lang.button.go-back}"></a>
+                    <button class="element-simple-button login-form-button" type="submit"  th:text="#{lang.button.login}" id="login-form-button"></button>
+                </div>
+            </form>
+        </main>
+    </body>
+</html>

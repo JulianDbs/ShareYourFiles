@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/html">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link th:href="@{/styles/style.css}" rel="stylesheet" type="text/css"/>
+    <link rel="icon" type="image/png" th:href="@{/icons/favicon.png}"/>
+    <th:block th:switch="${statusCode}">
+      <title th:case="-1" th:text="#{lang.error.errorUnknownTitle}"></title>
+      <title th:case="401" th:text="#{lang.error.error401Title}"></title>
+      <title th:case="403" th:text="#{lang.error.error403Title}"></title>
+      <title th:case="404" th:text="#{lang.error.error404Title}"></title>
+      <title th:case="500" th:text="#{lang.error.error500Title}"></title>
+    </th:block>
+  </head>
+  <body>
+    <main class="error-main">
+      <div class="error-main__div-panel">
+        <th:block th:switch="${statusCode}">
+          <h1 th:case="-1" class="error-main-div-panel__h1-title" th:text="#{lang.error.errorUnknownTile}"></h1>
+          <h1 th:case="401" class="error-main-div-panel__h1-title" th:text="#{lang.error.error401Title}"></h1>
+          <h1 th:case="403" class="error-main-div-panel__h1-title" th:text="#{lang.error.error403Title}"></h1>
+          <h1 th:case="404" class="error-main-div-panel__h1-title" th:text="#{lang.error.error404Title}"></h1>
+          <h1 th:case="500" class="error-main-div-panel__h1-title" th:text="#{lang.error.error500Title}"></h1>
+        </th:block>
+        <th:block th:switch="${statusCode}">
+          <p th:case="-1" class="error-main-div-panel__p" th:text="#{lang.error.errorUnknownMessage}"></p>
+          <p th:case="401" class="error-main-div-panel__p" th:text="#{lang.error.error401Message}"></p>
+          <p th:case="403" class="error-main-div-panel__p" th:text="#{lang.error.error403Message}"></p>
+          <p th:case="404" class="error-main-div-panel__p" th:text="#{lang.error.error404Message}"></p>
+          <p th:case="500" class="error-main-div-panel__p" th:text="#{lang.error.error500Message}"></p>
+        </th:block>
+        <a class=".element-simple-button error-main-div-panel__a-button" th:href="@{/}" th:text="#{lang.button.continue}"></a>
+      </div>
+    </main>
+  </body>
+</html>

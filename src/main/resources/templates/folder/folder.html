@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/styles/style.css}" rel="stylesheet" type="text/css"/>
+        <link rel="icon" type="image/png" th:href="@{/icons/favicon.png}"/>
+        <title th:text="#{lang.view.title.folder}"></title>
+    </head>
+    <body>
+        <main class="folder-main">
+            <section th:replace="~{fragments/section/FolderPanelSection::folder-panel-section(${parentFolderIsRoot}, ${parentFolderId}, ${parentFolderHavePassword}, ${folderIsPrivate}, ${folderHavePassword}, ${folderId})}"></section>
+            <section th:replace="~{fragments/section/PathSection::path-section(${path})}"></section>
+            <section th:replace="~{fragments/section/DesktopGridSection::desktop-grid-section(${folderList}, ${fileList}, ${folderRequest})}"></section>
+            <article th:replace="~{fragments/article/UploadFileArticle::upload-file-article(${newFile}, ${folderRequest})}"></article>
+            <article th:replace="~{fragments/article/CreateFolderArticle::create-folder-article(${newFolder})}"></article>
+            <article th:replace="~{fragments/article/DesktopRequestProtectedFolderArticle::request-protected-folder-article(${folderRequest}, ${requestAction})}"></article>
+            <th:block th:if="${folderHavePassword}">
+                <article th:replace="~{fragments/article/DeleteFolderWithPasswordArticle::delete-folder-with-password-article(${deleteFolderRequest})}"></article>
+                <article th:replace="~{fragments/article/ChangeFolderPasswordArticle::change-folder-password-article(${changePasswordRequest})}"></article>
+                <article th:replace="~{fragments/article/RemoveFolderPasswordArticle::remove-folder-password-article(${removePasswordRequest})}"></article>
+                <article th:replace="~{fragments/article/ChangeFolderNameWithPasswordArticle::change-folder-name-article(${folderName}, ${newFolderNameRequest})}"></article>
+                <th:block th:if="${folderIsPrivate}">
+                    <article th:replace="~{fragments/article/ShowFolderWithPasswordArticle::show-folder-with-password-article(${folderRequest})}"></article>
+                </th:block>
+                <th:block th:unless="${folderIsPrivate}">
+                    <article  th:replace="~{fragments/article/HideFolderWithPasswordArticle::hide-folder-with-password-article(${folderRequest})}"></article>
+                </th:block>
+            </th:block>
+            <th:block th:unless="${folderHavePassword}">
+                <article th:replace="~{fragments/article/DeleteFolderArticle::delete-folder-article(${deleteFolderRequest})}"></article>
+                <article th:replace="~{fragments/article/SetFolderPasswordArticle::set-folder-password-article(${setPasswordRequest})}"></article>
+                <article th:replace="~{fragments/article/ChangeFolderNameArticle::change-folder-name-article(${folderName}, ${newFolderNameRequest})}"></article>
+                <th:block th:if="${folderIsPrivate}">
+                    <article th:replace="~{fragments/article/ShowFolderArticle::show-folder-article(${folderRequest})}"></article>
+                </th:block>
+                <th:block th:unless="${folderIsPrivate}">
+                    <article th:replace="~{fragments/article/HideFolderArticle::hide-folder-article(${folderRequest})}"></article>
+                </th:block>
+            </th:block>
+        </main>
+    </body>
+</html>

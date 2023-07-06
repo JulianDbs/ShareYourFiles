@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Licensed to the Apache Software Foundation (ASF) under one
+     or more contributor license agreements.  See the NOTICE file
+     distributed with this work for additional information
+     regarding copyright ownership.  The ASF licenses this file
+     to you under the Apache License, Version 2.0 (the
+     "License"); you may not use this file except in compliance
+     with the License.  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+     Unless required by applicable law or agreed to in writing,
+     software distributed under the License is distributed on an
+     "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+     specific language governing permissions and limitations
+     under the License. -->
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link th:href="@{/styles/style.css}" rel="stylesheet" type="text/css"/>
+        <link rel="icon" type="image/png" th:href="@{/icons/favicon.png}"/>
+        <title th:text="#{lang.view.title.registration-success}"></title>
+    </head>
+    <body>
+        <main class="registration-success-main">
+            <div class="registration-success-main__div-panel">
+                <h1 th:text="#{lang.element.hello} + ' ' + ${name}" class="registration-success-main__h1-title"></h1>
+                <p th:text="#{lang.message.registration-success-message-1}" class="registration-success-main__p-message"></p>
+                <p th:text="#{lang.message.registration-success-message-2}" class="registration-success-main__p-message"></p>
+                <a th:href="@{/login}" class="element-simple-button registration-success-main__a-href" id="registration-success-button" th:text="#{lang.button.sign-in}"></a>
+            </div>
+        </main>
+    </body>
+</html>
