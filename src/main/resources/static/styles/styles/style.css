@@ -1,0 +1,119 @@
+:root {
+    --primary-color-dark: #252323;
+    --secondary-color-dark: #E7AF36;
+    --tertiary-color-dark: white;
+
+    --primary-color-light: white;
+    --secondary-color-light: #252323;
+    --tertiary-color-light: #E7AF36;
+
+    --border-primary-size: 3px;
+    --border-secondary-size: 5px;
+    --font-primary-size: 21px;
+    --font-secondary-size: 18px;
+    --font-tertiary-size: 30px;
+    --font-primary-family: Orbitron;
+    --header-height: 110px;
+    --nav-height: 50px;
+    --footer-height: 50px;
+}
+
+@media (prefers-color-scheme: dark) {
+    body {
+        --primary-color: var(--primary-color-dark);
+        --secondary-color: var(--secondary-color-dark);
+        --tertiary-color: var(--tertiary-color-dark);
+        --background-primary-color: var(--primary-color);
+        --background-secondary-color: var(--secondary-color);
+        --background-tertiary-color: var(--tertiary-color);
+        --border-primary-color: var(--primary-color);
+        --border-secondary-color: var(--secondary-color);
+        --border-tertiary-color: var(--secondary-color);
+        --font-primary-color: var(--primary-color);
+        --font-secondary-color: var(--secondary-color);
+        --font-tertiary-color: var(--tertiary-color);
+        //background-image: url("/backgrounds/circuit-board-dark.svg");
+    }
+
+    body .job-nav-mobile__b,
+    body .job-nav__b,
+    body .project-nav-mobile__b,
+    body .project-nav__b,
+    body .home-nav-mobile__b,
+    body .home-nav__b {
+        background-image: url(/icons/light-theme-logo.png);
+    }
+
+    body .job-nav-mobile__b:hover,
+    body .job-nav__b:hover,
+    body .project-nav-mobile__b:hover,
+    body .project-nav__b:hover,
+    body .home-nav-mobile__b:hover,
+    body .home-nav__b:hover {
+        background-image: url(/icons/light-theme-logo-hover.png);
+    }
+
+   body.light-theme {
+        --primary-color: var(--primary-color-light);
+        --secondary-color: var(--secondary-color-light);
+        --tertiary-color: var(--tertiary-color-light);
+        --background-primary-color: var(--primary-color);
+        --background-secondary-color: var(--secondary-color);
+        --background-tertiary-color: var(--tertiary-color);
+        --border-primary-color: var(--primary-color);
+        --border-secondary-color: var(--secondary-color);
+        --border-tertiary-color: var(--secondary-color);
+        --font-primary-color: var(--primary-color);
+        --font-secondary-color: var(--secondary-color);
+        --font-tertiary-color: var(--tertiary-color);
+        //background-image: url("/backgrounds/circuit-board-light.svg");
+    }
+
+    body.light-theme .job-nav-mobile__b,
+    body.light-theme .job-nav__b,
+    body.light-theme .project-nav-mobile__b,
+    body.light-theme .project-nav__b,
+    body.light-theme .home-nav-mobile__b,
+    body.light-theme .home-nav__b {
+        background-image: url(/icons/dark-theme-logo.png);
+    }
+
+    body.light-theme .home-nav-mobile__b:hover,
+    body.light-theme .home-nav__b:hover {
+        background-image: url(/icons/dark-theme-logo-hover.png);
+    }
+
+    body.light-theme .about-me-article__p {
+        color: var(--font-primary-color);
+    }
+
+    body.light-theme .services_article__h1 {
+        color: var(--font-tertiary-color);
+    }
+
+}
+
+h1, p {
+    pointer-events: none;
+}
+
+@font-face {
+    font-family : 'Orbitron';
+    src: url('/fonts/Orbitron/Orbitron-Regular.ttf');
+}
+
+body {
+    font-family: var(--font-primary-family);
+    background-color: var(--background-primary-color);
+}
+
+p, a {
+    font-size: var(--font-primary-size);
+    color: var(--font-primary-color);
+}
+
+header, section, article, div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
